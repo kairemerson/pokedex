@@ -27,25 +27,23 @@ export const WrapperCard = styled.div`
     gap: 4px;
 `
 export const StatsHp = styled.p`
-    background-image: linear-gradient(90deg, #f53527, #a62d24);
+    background-image: linear-gradient(90deg, #f2807e, #fa5855);
     width: 48%;
-    border: 1px solid #360a07;
     padding: 2px 8px;
     border-radius: 8px;
-    
 `
 export const StatsAtk = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #133cf2, #0f2aa3);
+    background-image: linear-gradient(90deg, #8d96f7, #4857f7);
 `
 export const StatsDef = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #fae420, #d4c11c);
+    background-image: linear-gradient(90deg, #f7f192, #f7ee60);
 `
 export const StatsSa = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #19f7f7, #21b5b5);
+    background-image: linear-gradient(90deg, #92f6f7, #53f3f5);
 `
 export const StatsSd = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #2fd12a, #2b8f28);
+    background-image: linear-gradient(90deg, #89f5a4, #4cf576);
 `
 export const StatsSp = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #a073f5, #693dba);
+    background-image: linear-gradient(90deg, #ad85f2, #7931f5);
 `

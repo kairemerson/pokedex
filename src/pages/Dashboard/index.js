@@ -3,10 +3,13 @@ import {useEffect, useState} from "react"
 import api from "../../services/api"
 import Card from "../../components/Card"
 import * as S from "./styles"
+import Details from "../../components/Details"
 
 
 function Dashboard (){
     const [pokemon, setPokemon] = useState([])
+    const [pokemonName, setPokemonName] = useState("")
+    const [searchedPokemon, setSearchedPokemon] = useState({})
 
     useEffect(()=>{
         async function getItems(){
@@ -20,10 +23,20 @@ function Dashboard (){
 
         getItems()
     }, [])
+    const getPokemon = async() =>{
+        const {data} = await api.get(`/pokemon/${pokemonName}`)
+        setSearchedPokemon(data)
+    }
     return(
         <div>
             <Text as="h1">Pokedex</Text>
-            <Text as="p">Search for Pokemóm by name or using the National Pokedex number</Text>
+            <Text as="p">Localize o pokemon pelo nome ou clique em um pokemon da lista para exibir as informações</Text>
+            <S.InputText type="text" 
+                placeholder="Digite o nome do pokemon" 
+                value={pokemonName} 
+                onChange={(event)=>{setPokemonName(event.target.value)}}
+                onBlur={()=>{getPokemon()}}/>
+            <Details pokemon={searchedPokemon}/>
             <S.Wrapper>
 
                 {pokemon.length > 0 && pokemon.map((item)=>(
