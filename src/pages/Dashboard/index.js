@@ -9,7 +9,7 @@ import Details from "../../components/Details"
 function Dashboard (){
     const [pokemon, setPokemon] = useState([])
     const [pokemonName, setPokemonName] = useState("")
-    const [searchedPokemon, setSearchedPokemon] = useState({})
+    const [searchedPokemon, setSearchedPokemon] = useState(null)
 
     useEffect(()=>{
         async function getItems(){
@@ -42,7 +42,7 @@ function Dashboard (){
                 {pokemon.length > 0 && pokemon.map((item)=>(
 
                     <Card name={item.name} image={item.sprites.front_default} id={item.id}
-                        stats={item.stats}
+                        stats={item.stats} key={item.id}
                     />
                    
                 )
