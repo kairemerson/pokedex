@@ -17,15 +17,16 @@ function Dashboard (){
             const resp = await Promise.all(data.results.map((item)=>api.get(item.url)))
             const format = resp.map((req)=>req.data)
             setPokemon(format)
-            console.log(format, "data",data);
         }
         
 
         getItems()
     }, [])
     const getPokemon = async() =>{
-        const {data} = await api.get(`/pokemon/${pokemonName}`)
-        setSearchedPokemon(data)
+        if(pokemonName){
+            const {data} = await api.get(`/pokemon/${pokemonName}`)
+            setSearchedPokemon(data)
+        }
     }
     return(
         <div>
@@ -36,6 +37,7 @@ function Dashboard (){
                 value={pokemonName} 
                 onChange={(event)=>{setPokemonName(event.target.value)}}
                 onBlur={()=>{getPokemon()}}/>
+            <S.Button onClick={()=>getPokemon()}>Buscar</S.Button>
             <Details pokemon={searchedPokemon}/>
             <S.Wrapper>
 

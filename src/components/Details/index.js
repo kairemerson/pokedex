@@ -1,10 +1,10 @@
 import * as S from "./styles"
 
 function Details({pokemon}){
-    {console.log("details",pokemon)}
+    
     if(pokemon !== null){
         return(
-            <S.WrapperDetails>
+            <S.WrapperDetails key={pokemon.id+pokemon.height}>
                
                 <S.Image src={pokemon.sprites.other.dream_world.front_default}/>
                 <S.Heading>{pokemon.name}</S.Heading>

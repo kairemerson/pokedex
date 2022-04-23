@@ -2,7 +2,7 @@ import * as S from "./styes"
 
 function Card(props){
     return(
-        <S.Wrapper>
+        <S.Wrapper key={props.id}>
             <p>{props.id}</p>
             <h3>{props.name}</h3>
             <img src={props.image}/>
