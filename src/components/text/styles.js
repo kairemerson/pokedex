@@ -6,5 +6,6 @@ export const Title = styled.p`
             font-size: 42px;
             color: black;
         `}
+        
     `} 
 `
