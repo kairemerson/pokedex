@@ -2,10 +2,10 @@ import * as S from "./styes"
 
 function Card(props){
     return(
-        <S.Wrapper key={props.id}>
+        <S.Wrapper >
             <p>#{props.id}</p>
             <h3>{props.name}</h3>
-            <img src={props.image}/>
+            <img src={props.image} alt={props.name}/>
             <S.WrapperCard> 
                 {props.types.map((type)=>(
                     <S.TypesSpan types={type.type.name}>{type.type.name}</S.TypesSpan>

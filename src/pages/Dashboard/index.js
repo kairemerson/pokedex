@@ -7,17 +7,18 @@ import Details from "../../components/Details"
 
 
 function Dashboard (){
-    const [pokemon, setPokemon] = useState([])
+    //const [pokemon, setPokemon] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokemonName, setPokemonName] = useState("")
     const [searchedPokemon, setSearchedPokemon] = useState(null)
+    const [limit, setLimit] = useState(50)
 
-    async function getItems(){
-        const {data} = await api.get("/pokemon")
-        const resp = await Promise.all(data.results.map((item)=>api.get(item.url)))
-        const format = resp.map((req)=>req.data)
+    async function getItems(limit){
+        // const {data} = await api.get("/pokemon")
+        // const resp = await Promise.all(data.results.map((item)=>api.get(item.url)))
+        // const format = resp.map((req)=>req.data)
         //setPokemon(format)
-        const dados = await getPokemons()
+        const dados = await getPokemons(limit)
         const promises = dados.results.map(async (pokemon)=>{
             return await getPokemonData(pokemon.url)
         })
@@ -34,6 +35,11 @@ function Dashboard (){
             setSearchedPokemon(data)
         }
     }
+    const loadMore = () => {
+        let nextLimit = limit + 50
+        setLimit(nextLimit)
+        getItems(nextLimit)
+    }
     return(
         <div>
             <Text as="h1">Pokedex</Text>
@@ -48,7 +54,7 @@ function Dashboard (){
             <S.Wrapper>
 
                 {pokemons.length > 0 && pokemons.map((item)=>(
-
+                    
                     <Card name={item.name} image={item.sprites.front_default} id={item.id}
                         stats={item.stats} key={item.id} types={item.types}
                     />
@@ -57,6 +63,7 @@ function Dashboard (){
                     
                 )}
             </S.Wrapper>
+                <S.Button onClick={() => loadMore()}>CARREGAR MAIS</S.Button>
         </div>
     )
 }

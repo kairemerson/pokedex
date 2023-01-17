@@ -43,12 +43,12 @@ export const TypesSpan = styled.span`
    background-color: ${(props) => props.types === "electric" ? "#ba9a22b3" : ""};
    background-color: ${(props) => props.types === "ground" ? "#8a8331b3" : ""};
    background-color: ${(props) => props.types === "fairy" ? "#ba65a0b3" : ""};
-   background-color: ${(props) => props.types === "rock" ? "#715c3d" : ""};
-   background-color: ${(props) => props.types === "ghost" ? "#83417a" : ""};
-   background-color: ${(props) => props.types === "steel" ? "#6c6c6c" : ""};
-   background-color: ${(props) => props.types === "psychic" ? "#452a8d" : ""};
+   background-color: ${(props) => props.types === "rock" ? "#715c3db3" : ""};
+   background-color: ${(props) => props.types === "ghost" ? "#83417ab3" : ""};
+   background-color: ${(props) => props.types === "steel" ? "#6c6c6cb3" : ""};
+   background-color: ${(props) => props.types === "psychic" ? "#452a8db3" : ""};
    background-color: ${(props) => props.types === "dragon" ? "#d57931" : ""};
-   background-color: ${(props) => props.types === "dark" ? "#232424" : ""};
+   background-color: ${(props) => props.types === "dark" ? "#232424b3" : ""};
    background-color: ${(props) => props.types === "ice" ? "#659dba" : ""};
    background-color: ${(props) => props.types === "shadow" ? "#414141" : ""};
    padding: .5px 8px;
