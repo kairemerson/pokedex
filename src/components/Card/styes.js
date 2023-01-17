@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     min-width: 150px;
     max-width: 300px;
-    min-height: 250px;
+    min-height: 200px;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -18,7 +18,6 @@ export const Wrapper = styled.div`
         margin-top: 6px;
     }
     
-    
 `
 export const WrapperCard = styled.div`
     display: flex;
@@ -32,18 +31,27 @@ export const StatsHp = styled.p`
     padding: 2px 8px;
     border-radius: 8px;
 `
-export const StatsAtk = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #8d96f7, #4857f7);
-`
-export const StatsDef = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #f7f192, #f7ee60);
-`
-export const StatsSa = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #92f6f7, #53f3f5);
-`
-export const StatsSd = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #89f5a4, #4cf576);
-`
-export const StatsSp = styled(StatsHp)`
-    background-image: linear-gradient(90deg, #ad85f2, #7931f5);
-`
+export const TypesSpan = styled.span`
+   background-color: ${(props) => props.types === "grass" ? "#7d8545b3" : ""};
+   background-color: ${(props) => props.types === "fire" ? "#a8282bb3" : ""};
+   background-color: ${(props) => props.types === "fighting" ? "#b64d19b3" : ""};
+   background-color: ${(props) => props.types === "poison" ? "#823ec3b3" : ""};
+   background-color: ${(props) => props.types === "water" ? "#145eabb3" : ""};
+   background-color: ${(props) => props.types === "flying" ? "#277ba1b3" : ""};
+   background-color: ${(props) => props.types === "bug" ? "#2f9651b3" : ""};
+   background-color: ${(props) => props.types === "normal" ? "#b1b1b1" : ""};
+   background-color: ${(props) => props.types === "electric" ? "#ba9a22b3" : ""};
+   background-color: ${(props) => props.types === "ground" ? "#8a8331b3" : ""};
+   background-color: ${(props) => props.types === "fairy" ? "#ba65a0b3" : ""};
+   background-color: ${(props) => props.types === "rock" ? "#715c3d" : ""};
+   background-color: ${(props) => props.types === "ghost" ? "#83417a" : ""};
+   background-color: ${(props) => props.types === "steel" ? "#6c6c6c" : ""};
+   background-color: ${(props) => props.types === "psychic" ? "#452a8d" : ""};
+   background-color: ${(props) => props.types === "dragon" ? "#d57931" : ""};
+   background-color: ${(props) => props.types === "dark" ? "#232424" : ""};
+   background-color: ${(props) => props.types === "ice" ? "#659dba" : ""};
+   background-color: ${(props) => props.types === "shadow" ? "#414141" : ""};
+   padding: .5px 8px;
+   border-radius: 8px;
+   `
+

@@ -1,6 +1,6 @@
 import Text from "../../components/text"
 import {useEffect, useState} from "react"
-import api from "../../services/api"
+import api, {getPokemons, getPokemonData} from "../../services/api"
 import Card from "../../components/Card"
 import * as S from "./styles"
 import Details from "../../components/Details"
@@ -8,20 +8,26 @@ import Details from "../../components/Details"
 
 function Dashboard (){
     const [pokemon, setPokemon] = useState([])
+    const [pokemons, setPokemons] = useState([])
     const [pokemonName, setPokemonName] = useState("")
     const [searchedPokemon, setSearchedPokemon] = useState(null)
 
+    async function getItems(){
+        const {data} = await api.get("/pokemon")
+        const resp = await Promise.all(data.results.map((item)=>api.get(item.url)))
+        const format = resp.map((req)=>req.data)
+        //setPokemon(format)
+        const dados = await getPokemons()
+        const promises = dados.results.map(async (pokemon)=>{
+            return await getPokemonData(pokemon.url)
+        })
+        const results = await Promise.all(promises)
+        setPokemons(results)
+    }
     useEffect(()=>{
-        async function getItems(){
-            const {data} = await api.get("/pokemon")
-            const resp = await Promise.all(data.results.map((item)=>api.get(item.url)))
-            const format = resp.map((req)=>req.data)
-            setPokemon(format)
-        }
-        
-
         getItems()
     }, [])
+
     const getPokemon = async() =>{
         if(pokemonName){
             const {data} = await api.get(`/pokemon/${pokemonName}`)
@@ -41,10 +47,10 @@ function Dashboard (){
             <Details pokemon={searchedPokemon}/>
             <S.Wrapper>
 
-                {pokemon.length > 0 && pokemon.map((item)=>(
+                {pokemons.length > 0 && pokemons.map((item)=>(
 
                     <Card name={item.name} image={item.sprites.front_default} id={item.id}
-                        stats={item.stats} key={item.id}
+                        stats={item.stats} key={item.id} types={item.types}
                     />
                    
                 )
