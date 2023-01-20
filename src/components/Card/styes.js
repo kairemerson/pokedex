@@ -23,6 +23,7 @@ export const WrapperCard = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding: 10px;
     gap: 4px;
 `
 export const StatsHp = styled.p`
@@ -32,15 +33,15 @@ export const StatsHp = styled.p`
     border-radius: 8px;
 `
 export const TypesSpan = styled.span`
-   background-color: ${(props) => props.types === "grass" ? "#7d8545b3" : ""};
-   background-color: ${(props) => props.types === "fire" ? "#a8282bb3" : ""};
+   background-color: ${(props) => props.types === "grass" ? "#47d1af" : ""};
+   background-color: ${(props) => props.types === "fire" ? "#fb6c6b" : ""};
    background-color: ${(props) => props.types === "fighting" ? "#b64d19b3" : ""};
    background-color: ${(props) => props.types === "poison" ? "#823ec3b3" : ""};
    background-color: ${(props) => props.types === "water" ? "#145eabb3" : ""};
    background-color: ${(props) => props.types === "flying" ? "#277ba1b3" : ""};
    background-color: ${(props) => props.types === "bug" ? "#2f9651b3" : ""};
    background-color: ${(props) => props.types === "normal" ? "#b1b1b1" : ""};
-   background-color: ${(props) => props.types === "electric" ? "#ba9a22b3" : ""};
+   background-color: ${(props) => props.types === "electric" ? "#fed86d" : ""};
    background-color: ${(props) => props.types === "ground" ? "#8a8331b3" : ""};
    background-color: ${(props) => props.types === "fairy" ? "#ba65a0b3" : ""};
    background-color: ${(props) => props.types === "rock" ? "#715c3db3" : ""};
@@ -53,5 +54,5 @@ export const TypesSpan = styled.span`
    background-color: ${(props) => props.types === "shadow" ? "#414141" : ""};
    padding: .5px 8px;
    border-radius: 8px;
-   `
+`
 

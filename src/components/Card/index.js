@@ -8,7 +8,7 @@ function Card(props){
             <img src={props.image} alt={props.name}/>
             <S.WrapperCard> 
                 {props.types.map((type)=>(
-                    <S.TypesSpan types={type.type.name}>{type.type.name}</S.TypesSpan>
+                    <S.TypesSpan key={type.type.url} types={type.type.name}>{type.type.name}</S.TypesSpan>
                 ))}
                 {/* <S.StatsHp>hp:{props.stats["0"].base_stat}</S.StatsHp>
                 <S.StatsAtk>atk:{props.stats["1"].base_stat}</S.StatsAtk>

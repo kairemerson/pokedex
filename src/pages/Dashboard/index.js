@@ -28,11 +28,13 @@ function Dashboard (){
     useEffect(()=>{
         getItems()
     }, [])
+    console.log(pokemons);
 
     const getPokemon = async() =>{
         if(pokemonName){
             const {data} = await api.get(`/pokemon/${pokemonName}`)
             setSearchedPokemon(data)
+            setPokemonName("")
         }
     }
     const loadMore = () => {
