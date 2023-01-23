@@ -31,7 +31,24 @@ export const Wrapper = styled.div`
     box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.75);
     overflow: hidden;
 `
-
+export const ButtonClose = styled.button`
+    position: absolute;
+    z-index: 10;
+    font-size: .9rem;
+    font-weight: 400;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f24646;
+    right: 4px;
+    top: -4px;
+    cursor: pointer;
+    &:hover{
+        background-color: #fc6060;
+    }
+`
 export const WrapperDetails = styled.div`
     display: flex;
     justify-content: center;
@@ -82,9 +99,9 @@ export const Image = styled.img`
 `
 export const ImageLogo = styled.img`
     position: absolute;
-    width: 70%;
+    width: 80%;
     opacity: .3;
-    right: -10px;
+    right: 0px;
     transform: rotate(150deg);
 `
 export const Heading = styled.h2`

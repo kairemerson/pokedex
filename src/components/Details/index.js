@@ -1,12 +1,23 @@
 import * as S from "./styles"
 import logo from "../../../src/logo.png"
+import { useEffect, useState } from "react"
 
 function Details({pokemon}){
-    
+    const [isOpen, setIsOpen] = useState(true)
+
+    useEffect(()=>{
+        setIsOpen(true)   
+    },[pokemon])
+
+    const clickClose = () => {
+        console.log(isOpen);
+        setIsOpen(false)
+    }
     if(pokemon !== null){
-        return(
+        return isOpen && (
             <S.Wrapper pokemon={pokemon}>
                 <S.WrapperDetails>
+                    <S.ButtonClose onClick={()=> clickClose()}>X</S.ButtonClose>
                     <S.ImageLogo src={logo}/>
                     <div>
                         <p>#{pokemon.id}</p>
