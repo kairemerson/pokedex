@@ -27,8 +27,7 @@ function Dashboard (){
     }
     useEffect(()=>{
         getItems()
-    }, [])
-    console.log(pokemons);
+    }, [])  
 
     const getPokemon = async() =>{
         if(pokemonName){
@@ -41,6 +40,10 @@ function Dashboard (){
         let nextLimit = limit + 50
         setLimit(nextLimit)
         getItems(nextLimit)
+    }
+    const openDetails = (pokemon)=>{
+        console.log("chamou od", pokemon)
+        setSearchedPokemon(pokemon)
     }
     return(
         <div>
@@ -58,7 +61,7 @@ function Dashboard (){
                 {pokemons.length > 0 && pokemons.map((item)=>(
                     
                     <Card name={item.name} image={item.sprites.front_default} id={item.id}
-                        stats={item.stats} key={item.id} types={item.types}
+                        stats={item.stats} key={item.id} types={item.types} pokemon={item} openDetails={openDetails}
                     />
                    
                 )

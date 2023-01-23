@@ -7,10 +7,10 @@ function Details({pokemon}){
 
     useEffect(()=>{
         setIsOpen(true)   
+        console.log(pokemon);
     },[pokemon])
 
     const clickClose = () => {
-        console.log(isOpen);
         setIsOpen(false)
     }
     if(pokemon !== null){

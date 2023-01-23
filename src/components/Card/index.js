@@ -2,7 +2,7 @@ import * as S from "./styes"
 
 function Card(props){
     return(
-        <S.Wrapper >
+        <S.Wrapper onClick={()=>props.openDetails(props.pokemon)}>
             <p>#{props.id}</p>
             <h3>{props.name}</h3>
             <img src={props.image} alt={props.name}/>
