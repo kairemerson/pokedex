@@ -1,5 +1,6 @@
 
 
+import  Header  from "./components/Header/index";
 import Layout from "./components/Layout";
 import AppRouter from "./routes";
 import CreateStyle from "./styles/global"
@@ -7,12 +8,13 @@ import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Header/>
+      <Layout>
         <AppRouter/>
-      </BrowserRouter>
+        </Layout>
       <CreateStyle/>
-    </Layout>
+    </BrowserRouter>
   );
 }
 

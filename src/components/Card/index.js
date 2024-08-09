@@ -2,10 +2,10 @@ import * as S from "./styes"
 
 function Card(props){
     return(
-        <S.Wrapper onClick={()=>props.openDetails(props.pokemon)}>
-            <p>#{props.id}</p>
+        <S.Wrapper onClick={()=>{props.openDetails(props.pokemon); props.changeOpenDetails()}} >
+            <S.P >#{props.id}</S.P>
             <h3>{props.name}</h3>
-            <img src={props.image} alt={props.name}/>
+            <S.Img src={props.image} alt={props.name}/>
             <S.WrapperCard> 
                 {props.types.map((type)=>(
                     <S.TypesSpan key={type.type.url} types={type.type.name}>{type.type.name}</S.TypesSpan>

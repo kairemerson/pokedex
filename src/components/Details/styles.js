@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     background-color: ${(props) => props.pokemon.types[0].type.name === "ice" ? "#659dba" : ""};
     background-color: ${(props) => props.pokemon.types[0].type.name === "shadow" ? "#414141" : ""};
     max-width: 300px;
-    margin: 50px auto;
+    margin: 10px auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -53,13 +53,16 @@ export const WrapperDetails = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     min-height: 120px;
     gap: 20px;
     margin: 10px 0px;
     position: relative;
     p{
+        position: relative;
         color: white;
         font-size: 1.5rem;
+        z-index: 1;
     }
 `
 export const WrapperContent = styled.div`

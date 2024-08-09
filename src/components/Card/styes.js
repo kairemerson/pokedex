@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    min-width: 150px;
+    min-width: 200px;
     max-width: 300px;
-    min-height: 200px;
+    min-height: 240px;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -12,12 +12,29 @@ export const Wrapper = styled.div`
     margin: 6px;
     padding: 4px;
     border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.15);
+    cursor: pointer;
     &>p{
-        align-self: baseline;
-        margin-left: 10px;
-        margin-top: 6px;
+       
+    }
+    &>h3{
+        color: #777;
+        font-size: 20px;
     }
     
+`
+export const P = styled.p`
+    align-self: baseline;
+    margin-left: 10px;
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #777;
+`
+export const Img = styled.img`
+    margin: auto;
 `
 export const WrapperCard = styled.div`
     display: flex;
@@ -52,7 +69,7 @@ export const TypesSpan = styled.span`
    background-color: ${(props) => props.types === "dark" ? "#232424b3" : ""};
    background-color: ${(props) => props.types === "ice" ? "#659dba" : ""};
    background-color: ${(props) => props.types === "shadow" ? "#414141" : ""};
-   padding: .5px 8px;
+   padding: 1px 10px;
    border-radius: 8px;
 `
 
